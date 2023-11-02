@@ -11,11 +11,11 @@ const Header = ({ onTypeChange }) => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid contenedorHeader">
           <img src={Logo} alt="Logo pokemon" className='logoPokemon' />
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
+          <button className="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon bg-secondary"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <a className="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Categorias por tipos
             </a>
             <div className="navbar-nav">
