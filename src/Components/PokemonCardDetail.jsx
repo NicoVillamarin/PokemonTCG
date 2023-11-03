@@ -51,7 +51,7 @@ const PokemonCardDetail = () => {
     return (
         <div>
             <Link to={"/"}>
-                <button type="button" className="btn btn-primary mb-3 button_detail">Back</button>
+                <button type="button" className="btn bg-secondary text-light mb-3 button_detail">Back</button>
             </Link>
             <div className="card_detail_container">
                 <div className="conteiner_left">
