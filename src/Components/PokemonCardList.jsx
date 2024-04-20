@@ -2,7 +2,7 @@ import PokemonCard from "./PokemonCard"
 import { useNavigate, useParams } from "react-router-dom"
 import Loading from "./Loading";
 import PropTypes from 'prop-types'
-
+import CarouselCard from "./CarouselCard";
 const PokemonCardList = ({ cards }) => {
 
     const navigate = useNavigate();
@@ -17,6 +17,20 @@ const PokemonCardList = ({ cards }) => {
         return <Loading />;
     }
     return (
+        <>
+        <div className="d-flex flex-column justify-content-center text-center aling-items-center mb-5">
+            <h1>
+            Pokémon Card Explorer
+            </h1>
+            <span>"¡Catch 'Em All Cards!"</span>
+        </div>
+        <div className="d-flex justify-content-center aling-items-center" style={{gap: 30}}>
+
+        <CarouselCard cards={cards} />
+        </div>
+        <div className="m-5" id="galery">
+        <h2>PokéDeck Gallery</h2>
+        </div>
         <div className="container pokemon_list">
             {
                 filteredCards.map((card) => (
@@ -29,6 +43,7 @@ const PokemonCardList = ({ cards }) => {
                 </button>
             </div>
         </div>
+        </>
     )
 }
 

@@ -56,7 +56,7 @@ const PokemonCardDetail = () => {
             <div className="card_detail_container">
                 <div className="conteiner_left">
                     <h1>{name}</h1>
-                    <img src={images?.large} alt={`${set}-${rarity}`} className="img_detail" />
+                    <img src={images?.large} alt={`${set}-${rarity}`} className="img_detail" style={{width: 400, borderRadius: 20}} />
                 </div>
                 <div className="container_right">
                     <h2>Set</h2>
