@@ -34,6 +34,7 @@ const PokemonCardDetail = () => {
         const fetchCardDetail = async () => {
             try {
                 const response = await fetch(`https://api.pokemontcg.io/v2/cards/${id}`);
+
                 const data = await response.json();
                 setCard(data.data);
             } catch (error) {
@@ -66,7 +67,7 @@ const PokemonCardDetail = () => {
                     <p>HP: <span>{hp}</span></p>
 
                     <h3>Ataques: </h3>
-                    {attacks.map((attack, index) => {
+                    {attacks?.map((attack, index) => {
                         const attackElements = attack.cost;
                         return (
                             <div key={index}>
@@ -74,7 +75,7 @@ const PokemonCardDetail = () => {
                                     {attack.name}: <span>{attack.damage}</span>
                                 </p>
                                 <div className="energy-icons">
-                                    {attackElements.map((element, elementIndex) => {
+                                    {attackElements?.map((element, elementIndex) => {
                                         const iconoRuta = tipoIconos[element];
                                         if (iconoRuta) {
                                             return <img key={elementIndex} src={iconoRuta} alt={element} className="logo_energy" />;
@@ -87,7 +88,7 @@ const PokemonCardDetail = () => {
 
                     })}
                     <h3>Debilidades</h3>
-                    {weaknesses.map((weakness, index) => {
+                    {weaknesses?.map((weakness, index) => {
                         const iconoRuta = tipoIconos[weakness.type];
                         if (iconoRuta) {
                             return (
@@ -105,7 +106,7 @@ const PokemonCardDetail = () => {
                     })}
                     <h3>Resistencia:</h3>
                     {resistances && resistances.length > 0 ? (
-                        resistances.map((resistan, index) => {
+                        resistances?.map((resistan, index) => {
                             const iconoRutaRes = tipoIconos[resistan.type]
                             if (iconoRutaRes) {
                                 return (
@@ -122,7 +123,7 @@ const PokemonCardDetail = () => {
                         <p>No hay resistencias</p>
                     )}
                     <h3>Precios</h3>
-                    <p>Promedio: {tcgplayer.prices.holofoil?.mid ? `$${tcgplayer.prices.holofoil.mid}` : 'No hay datos disponibles'}</p>
+                    <p>Promedio: {tcgplayer?.prices.holofoil?.mid ? `$${tcgplayer?.prices.holofoil.mid}` : 'No hay datos disponibles'}</p>
 
                 </div>
             </div>

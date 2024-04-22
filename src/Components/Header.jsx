@@ -1,11 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/1200px-Pokémon_TCG_logo.png';
 
-const Header = ({ onTypeChange }) => {
+const Header = ({ onTypeChange, onSearch  }) => {
+
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleTypeClick = (type) => {
     onTypeChange(type);
+  }
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  }
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    onSearch(searchTerm);
   }
 
   return (
